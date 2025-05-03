@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion | LUXE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">LUXE</a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Shop</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="icons">
+                <div class="user-btn">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="wishlist-btn">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  
+    <section class="category-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Men's Fashion</h1>
+                <p>Premium clothing and accessories for the modern man</p>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section class="subcategories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="subcategory-grid">
+                <a href="#" class="subcategory-card">
+                    <img src="https://images.unsplash.com/photo-1630724725269-a0e78771cea0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFsZSUyMHRzaGlydHN8ZW58MHx8MHx8fDA%3D" alt="T-Shirts">
+                    <h3>T-Shirts</h3>
+                </a>
+                <a href="#" class="subcategory-card">
+                    <img src="https://images.unsplash.com/photo-1713388356873-f31229287afa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFsZSUyMHRzaGlydHN8ZW58MHx8MHx8fDA%3D" alt="Shirts">
+                    <h3>Shirts</h3>
+                </a>
+                <a href="#" class="subcategory-card">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Jackets">
+                    <h3>Jackets</h3>
+                </a>
+                <a href="#" class="subcategory-card">
+                    <img src="https://images.unsplash.com/photo-1718734295741-b33c02df35bd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFsZSUyMHBhbnRzfGVufDB8fDB8fHww" alt="Pants">
+                    <h3>Pants</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Men's Collection</h2>
+                <div class="sort-filter">
+                    <select id="sort-by">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest Arrivals</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="product-grid" id="product-grid">
+               
+            </div>
+        </div>
+    </section>
+
+
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>Men's Summer Sale</h2>
+                <h3>Up to 40% Off</h3>
+                <p>On selected men's fashion items</p>
+                <a href="#" class="btn">Shop the Sale</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+       
+    </footer>
+
+  
+    <div class="cart-sidebar" id="cart-sidebar">
+       
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    
+    <div class="mobile-menu" id="mobile-menu">
+       
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const menProducts = products.filter(product => product.category === 'men');
+            displayProducts(menProducts);
+            
+            
+            document.getElementById('sort-by').addEventListener('change', (e) => {
+                let sortedProducts = [...menProducts];
+                
+                switch(e.target.value) {
+                    case 'price-low':
+                        sortedProducts.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-high':
+                        sortedProducts.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'newest':
+                        sortedProducts.sort((a, b) => b.id - a.id);
+                        break;
+                    case 'rating':
+                        sortedProducts.sort((a, b) => b.rating - a.rating);
+                        break;
+                    default:
+                        
+                        break;
+                }
+                
+                displayProducts(sortedProducts);
+            });
+        });
+    </script>
+    <script src="shared.js"></script>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
